@@ -85,18 +85,24 @@
 		        <tr>
 		            <th>Name</th>
 		            <th>Email</th>
+                <th>Attending</th>
 		            <th>Plus One</th>
+                <th>Plus One Name</th>
+                <th>Message</th>
 		        </tr>
 		    </thead>
 			<tbody>
 				{% for guest in guests %}
-				{% if guest.attending == 1 %}
+				<!--{% if guest.attending == 1 %}-->
 				<tr>
 					<td>{{ guest.name | safe }}</td>
 					<td>{{ guest.email | safe }}</td>
+          <td>{{ guest.attending | safe }}</td>
+          <td>{{ guest.plusone | safe }}</td>
 					<td>{{ guest.plusonename | safe }}</td>
+          <td>{{ guest.message | safe }}</td>
 				</tr>
-				{% endif %}
+				<!--{% endif %}-->
 				{% endfor %}
 			</tbody>
 		</table>
