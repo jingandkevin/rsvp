@@ -51,8 +51,8 @@ loginmanager.login_view = "login"
 class RSVPForm(Form):
     name = StringField('', validators=[DataRequired()])
     email = StringField('', validators=[DataRequired()])
-    attending = SelectField(choices=[('1', 'I plan to attend'), ('0', 'I regretfully decline')], validators=[DataRequired()])
-    plusone = SelectField(choices=[('1', 'I am bringing a +1'), ('0', 'I am not bringing anyone')], validators=[DataRequired()])
+    attending = SelectField(choices=[('1', "Yes! Wouldn't miss it for the world"), ('0', 'No. Party on without us')], validators=[DataRequired()])
+    plusone = SelectField(choices=[('1', 'Yes! Bringing a hot date'), ('0', 'No. Going stag')], validators=[DataRequired()])
     plusonename = StringField('')
     message = TextAreaField('')
     street = StringField('')
