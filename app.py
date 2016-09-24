@@ -161,6 +161,7 @@ def rsvp():
         u.email = request.form['email'].lower()
         u.attending = request.form['attending']
         u.plusone = request.form['plusone']
+        u.plusonename = request.form['plusonename']
         u.message = request.form['message']
         u.street = request.form['street']
         u.city = request.form['city']
@@ -175,7 +176,7 @@ def rsvp():
         for fieldName, errorMessages in form.errors.iteritems():
             for err in errorMessages:
                 flash(fieldName.capitalize() + ' ' + err[-12:], 'warning')
-        return redirect(url_for('rsvp'))
+        return render_template('rsvp.html', title='RSVP', form=form)
 	return render_template('rsvp.html', title='RSVP', form=form)
 
 @app.route('/guestlist')
