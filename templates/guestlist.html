@@ -93,7 +93,6 @@
 		    </thead>
 			<tbody>
 				{% for guest in guests %}
-				<!--{% if guest.attending == 1 %}-->
 				<tr>
 					<td>{{ guest.name | safe }}</td>
 					<td>{{ guest.email | safe }}</td>
@@ -102,7 +101,6 @@
 					<td>{{ guest.plusonename | safe }}</td>
           <td>{{ guest.message | safe }}</td>
 				</tr>
-				<!--{% endif %}-->
 				{% endfor %}
 			</tbody>
 		</table>
