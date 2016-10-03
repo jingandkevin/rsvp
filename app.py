@@ -187,7 +187,7 @@ def decline():
 	u.attending = u.plusone = 0
 	db.session.add(u)
 	db.session.commit()
-	return redirect('https://jingandkevin.github.io/')
+	return redirect('https://jingandkevin.github.io/sorry/')
 # jingandkevin.pythonanywhere.com/decline?name=FIRST%20LAST&email=EMAIL%40GMAIL%2Ecom
 
 @app.route('/guestlist')
