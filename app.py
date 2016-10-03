@@ -185,6 +185,7 @@ def decline():
 	u.name = request.args.get('name')
 	u.email = request.args.get('email')
 	u.attending = u.plusone = 0
+	u.message = request.remote_addr + ',' + request.user_agent.platform + ',' + request.user_agent.browser
 	db.session.add(u)
 	db.session.commit()
 	return redirect('https://jingandkevin.github.io/sorry/')
