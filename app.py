@@ -179,6 +179,17 @@ def rsvp():
         return render_template('rsvp.html', title='RSVP', form=form)
 	return render_template('rsvp.html', title='RSVP', form=form)
 
+@app.route('/decline')
+def decline():
+	u = User()
+	u.name = request.args.get('name')
+	u.email = request.args.get('email')
+	u.attending = u.plusone = 0
+	db.session.add(u)
+	db.session.commit()
+	return redirect('https://jingandkevin.github.io/')
+# jingandkevin.pythonanywhere.com/decline?name=FIRST%20LAST&email=EMAIL%40GMAIL%2Ecom
+
 @app.route('/guestlist')
 @login_required
 def guestlist():
